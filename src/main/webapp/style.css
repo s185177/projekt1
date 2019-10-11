@@ -1,0 +1,26 @@
+/* Deler hele vinduet ind i mindre dele indekseret med bogstaver */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 100px;
+    grid-template-areas: "a a b b b b b b c c" "a a b b b b b b c c" "a a b b b b b b c c" "a a b b b b b b c c";
+    align-items: start;
+    /*  Kilde: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout    */
+}
+.item1 { grid-area: a; } /* Tildeler områderne a til .item1 */
+.item2 { grid-area: b; } /* Tildeler områderne b til .item2 */
+.item3 { grid-area: c; } /* Tildeler områderne c til .item3 */
+.item4 { grid-area: b; justify-self: center; } /* Tildeler midten af områderne b til .item4 */
+
+/* Formaterer h2 som rød box indeholdende hvid tekst */
+h2 { border-style: solid; border-color: crimson; background: crimson; color: white; }
+
+/* Tilføjer skygge til kolonnen i midten */
+.item2 {
+    border: crimson solid 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* Tilføjer kant til box i midten af .item2 */
+.item4 {
+    border: grey solid 2px;
+}
